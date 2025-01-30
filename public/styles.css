@@ -1,0 +1,154 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+a {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+    }
+
+    table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 50%;
+        padding-right: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+}
