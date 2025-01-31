@@ -1,128 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Customer</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e3f2fd; /* Light Blue */
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1565c0; /* Dark Blue */
-            color: #fff; /* White */
-            padding: 10px 0;
-            text-align: center;
-        }
-        header img {
-            width: 50px;
-            vertical-align: middle;
-        }
-        header h1 {
-            display: inline;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #fff; /* White */
-            text-decoration: none;
-        }
-        main {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff; /* White */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        main h1 {
-            text-align: center;
-            color: #1565c0; /* Dark Blue */
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        form label {
-            margin: 10px 0 5px;
-            color: #1565c0; /* Dark Blue */
-        }
-        form input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        form button {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #1565c0; /* Dark Blue */
-            color: #fff; /* White */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        form button:hover {
-            background-color: #0d47a1; /* Darker Blue */
-        }
-        .back-link {
-            display: block;
-            margin-top: 20px;
-            text-align: center;
-            color: #1565c0; /* Dark Blue */
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #1565c0; /* Dark Blue */
-            color: #fff; /* White */
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e3f2fd; /* Light Blue */
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #1565c0; /* Dark Blue */
+        color: #fff; /* White */
+        padding: 10px 0;
+        text-align: center;
+      }
+      header img {
+        width: 50px;
+        vertical-align: middle;
+      }
+      header h1 {
+        display: inline;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 10px;
+      }
+      nav ul li a {
+        color: #fff; /* White */
+        text-decoration: none;
+      }
+      main {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff; /* White */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10 px;
+      }
+      main h1 {
+        text-align: center;
+        color: #1565c0; /* Dark Blue */
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      form label {
+        margin: 10px 0 5px;
+        color: #1565c0; /* Dark Blue */
+      }
+      form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      form button {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #1565c0; /* Dark Blue */
+        color: #fff; /* White */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      form button:hover {
+        background-color: #0d47a1; /* Darker Blue */
+      }
+      .back-link {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        color: #1565c0; /* Dark Blue */
+        text-decoration: none;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        padding: 10px 0;
+        background-color: #1565c0; /* Dark Blue */
+        color: #fff; /* White */
+        position: relative;
+        width: 100%;
+        bottom: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img src="https://ascendifly.com/uploads/setting/ascen  ifly_1691054331.png"  style=" max-width: 100%; width : 200px;"alt="Ascendifly Logo">
+      <img
+        src="https://ascendifly.com/uploads/setting/ascen  ifly_1691054331.png"
+        style="max-width: 100%; width: 200px"
+        alt="Ascendifly Logo"
+      />
     </header>
 
     <main>
-        <h1>Add New Customer</h1>
-        <form action="/add" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <label for="carModel">Car Model:</label>
-            <input type="text" id="carModel" name="carModel" required>
-            <br>
-            <label for="carVariant">Car Variant:</label>
-            <input type="text" id="carVariant" name="carVariant" required>
-            <br>
-            <label for="purchaseDate">Purchase Date:</label>
-            <input type="date" id="purchaseDate" name="purchaseDate" required style="font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
-            <br>
-            <button type="submit">Add Customer</button>
-        </form>
-        <a href="/" class="back-link">Back to List</a>
+      <h1>Add New Customer</h1>
+      <form action="/add" method="POST">
+        <label for="name">Customer Name:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required />
+        <br />
+        <label for="birthDate">Date of Birth:</label>
+        <input
+          type="date"
+          id="birthDate"
+          name="birthDate"
+          required
+          placeholder="Customers Date of Birth"
+          style="
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <label for <label for="carModel">Car Model:</label>
+        <input type="text" id="carModel" name="carModel" required />
+        <br />
+        <label for="carVariant">Car Variant:</label>
+        <input type="text" id="carVariant" name="carVariant" required />
+        <br />
+        <label for="purchaseDate">Purchase Date:</label>
+        <input
+          type="date"
+          id="purchaseDate"
+          name="purchaseDate"
+          required
+          style="
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          "
+        />
+        <br />
+
+        <button type="submit">Add Customer</button>
+      </form>
+      <a href="/" class="back-link">Back to List</a>
     </main>
 
     <footer>
-        <p>&copy; 2023 Ascendifly. All rights reserved.</p>
-        <p>We are a Revenue consulting company offering training, research, and consulting services to Revenue Business Functions.</p>
+      <p>&copy; 2023 Ascendifly. All rights reserved.</p>
+      <p>
+        We are a Revenue consulting company offering training, research, and
+        consulting services to Revenue Business Functions.
+      </p>
     </footer>
-</body>
+  </body>
 </html>
