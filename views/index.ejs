@@ -118,6 +118,8 @@
           <thead>
             <tr>
               <th>Name</th>
+              <th>Birth Date</th>
+              <th>Phone</th>
               <th>Car Model</th>
               <th>Car Variant</th>
               <th>Purchase Date</th>
@@ -128,6 +130,8 @@
             <% customers.forEach(customer => { %>
             <tr>
               <td><%= customer.name %></td>
+              <td><%= customer.birthDate %></td>
+              <td><%= customer.phone %></td>
               <td><%= customer.carModel %></td>
               <td><%= customer.carVariant %></td>
               <td><%= customer.purchaseDate %></td>

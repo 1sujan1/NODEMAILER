@@ -19,8 +19,10 @@ exports.addCustomer = (req, res) => {
   const newCustomer = {
     id: Math.floor(Math.random() * 10000).toString(),
     name,
+    dateofBirth,
     carModel,
     carVariant,
+    phone,
     purchaseDate,
   };
   customerModel.addCustomer(newCustomer);

@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const customerRoutes = require("./routes/customerRoutes");
+const customerRoutes = require("./routes/CustomerRoutes");
 const path = require("path");
 
 const app = express();
@@ -62,18 +62,29 @@ const nodemailer = require("nodemailer");
 // Function to send email
 function sendAnniversaryEmail(customer) {
   const transporter = nodemailer.createTransport({
-    service: "Gmail",
+    service: "Outlook",
     auth: {
-      user: "your-email@gmail.com", // Replace with your email
-      pass: "your-password", // Replace with your password
+      user: "Carina_ascendifly@outlook.com", // Replace with your email
+      pass: "#Carina123", // Replace with your password
     },
   });
 
   const mailOptions = {
-    from: "your-email@gmail.com",
-    to: "company-email@example.com", // Replace with the company email
+    from: "Carina_ascendifly@outlook.com",
+    to: "suzon9849@gmail.com", // Replace with the company email
     subject: `Anniversary Reminder: ${customer.name}`,
-    text: `Today is the purchase anniversary of ${customer.name} who bought a ${customer.carModel} (${customer.carVariant}) on ${customer.purchaseDate}.`,
+    html: `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img src="https://example.com/path/to/ascendify-logo.png" alt="Ascendify Logo" style="width: 150px;">
+    </div>
+    <h2 style="color: #333;">Anniversary Reminder</h2>
+    <p>Dear Team,</p>
+    <p>Today is the purchase anniversary of <strong>${customer.name}</strong> who bought a <strong>${customer.carModel} (${customer.carVariant})</strong> on <strong>${customer.purchaseDate}</strong>.</p>
+    <p>Please take a moment to reach out and congratulate them on this special occasion.</p>
+    <p>Best regards,<br>Your Company</p>
+    </div>
+  `,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -89,10 +100,9 @@ function sendAnniversaryEmail(customer) {
 setInterval(() => {
   const customers = require("./models/customerModel").getAllCustomers();
   const today = new Date().toISOString().split("T")[0];
-
   customers.forEach((customer) => {
     if (customer.purchaseDate.split("T")[0] === today) {
       sendAnniversaryEmail(customer);
     }
   });
-}, 86400000);
+}, 100);
