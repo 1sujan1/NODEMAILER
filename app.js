@@ -62,7 +62,7 @@ const nodemailer = require("nodemailer");
 // Function to send email
 function sendAnniversaryEmail(customer) {
   const transporter = nodemailer.createTransport({
-    service: "Outlook",
+    service: "outlook",
     auth: {
       user: "Carina_ascendifly@outlook.com", // Replace with your email
       pass: "#Carina123", // Replace with your password
@@ -105,4 +105,4 @@ setInterval(() => {
       sendAnniversaryEmail(customer);
     }
   });
-}, 100);
+}, 1000 * 60 * 60 * 24); // Check every 24 hours change this for testing set it to 100 or 1000
