@@ -43,7 +43,7 @@ app.get("/login", (req, res) => {
 // Handle login form submission
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
-  if (username === "admin" && password === "password") {
+  if (username === "ascendifly" && password === "vehicle_reminder") {
     // Replace with your credentials
     req.session.user = username;
     res.redirect("/");
@@ -110,16 +110,16 @@ const nodemailer = require("nodemailer");
 // Function to send email
 function sendAnniversaryEmail(customer) {
   const transporter = nodemailer.createTransport({
-    service: "outlook",
+    service: "gmail",
     auth: {
-      user: "Carina_ascendifly@outlook.com", // Replace with your email
-      pass: "#Carina123", // Replace with your password
+      user: "carinaascendifly@gmail.com", // Replace with your email
+      pass: "bwgh nwik qdjy pwbz", // Replace with your password
     },
   });
 
   const mailOptions = {
-    from: "Carina_ascendifly@outlook.com",
-    to: "suzon9849@gmail.com", // Replace with the company email
+    from: "carinaascendifly@gmail.com",
+    to: "carinaascendifly@gmail.com", // Replace with the company email
     subject: `Anniversary Reminder: ${customer.name}`,
     html: `
     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
@@ -147,16 +147,16 @@ function sendAnniversaryEmail(customer) {
 // Function to send birthday email
 function sendBirthdayEmail(customer) {
   const transporter = nodemailer.createTransport({
-    service: "outlook",
+    service: "gmail",
     auth: {
-      user: "Carina_ascendifly@outlook.com", // Replace with your email
-      pass: "#Carina123", // Replace with your password
+      user: "carinaascendifly@gmail.com", // Replace with your email
+      pass: "bwgh nwik qdjy pwbz", // Replace with your password
     },
   });
 
   const mailOptions = {
-    from: "Carina_ascendifly@outlook.com",
-    to: "suzon9849@gmail.com", // Replace with the company email
+    from: "carinaascendifly@gmail.com",
+    to: "carinaascendifly@gmail.com", // Replace with the company email
     subject: `Birthday Reminder: ${customer.name}`,
     html: `
     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
